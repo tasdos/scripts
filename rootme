@@ -1,0 +1,8 @@
+#!/bin/sh
+clear
+echo "MY_BASE64_ENCODED_PASSWORD" | base64 -d | sudo -S su - 2>/dev/null && sudo su -
+if [ $? -ne 0 ]; then
+    sudo su -
+fi
+clear
+
